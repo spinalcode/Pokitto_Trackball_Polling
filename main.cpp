@@ -36,9 +36,6 @@ int main() {
     int px,py = 0;
     int speed = 3;
 
-    float sx = 0.0;
-    float sy = 0.0;
-
     while( PC::isRunning() ){
         PD::update();
         
@@ -67,7 +64,7 @@ int main() {
         if(PB::upBtn()){ledRed.write(HIGH);}else{ledRed.write(LOW);}
         if(PB::downBtn()){ledGreen.write(HIGH);}else{ledGreen.write(LOW);}
         if(PB::leftBtn()){ledBlue.write(HIGH);}else{ledBlue.write(LOW);}
-        if(PB::rightBtn()){ledWhite.write(HIGH);}else{ledWhite.write(LOW);}
+        if(button0.read()){ledWhite.write(LOW);}else{ledWhite.write(HIGH);}
 
 
         PD::printf("X: %d, Y: %d\n", px,py);
